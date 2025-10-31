@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head><script src="./commonmark.umd.js"></script>
@@ -180,6 +181,91 @@
   outline: none;
   border-color: var(--accent2);
 }
+/* ------------------ MOBILE RESPONSIVE ------------------ */
+@media(max-width: 980px) {
+  body {
+    padding: 0 12px;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .brand {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .title { font-size: 18px; }
+  .subtitle { font-size: 12px; }
+
+  .center-col {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 0;
+  }
+
+  .input-row {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .input, .cta {
+    width: 100%;
+    flex: unset;
+  }
+
+  .section-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .h-right {
+    width: 100%;
+    margin-top: 8px;
+    justify-content: flex-start;
+  }
+
+  .result-body {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .tools-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .dev-notes {
+    grid-template-columns: 1fr;
+  }
+
+  .select-dropdown select {
+    width: 100%;
+  }
+
+  .chart-svg {
+    height: 180px;
+  }
+}
+
+@media(max-width: 600px) {
+  header {
+    gap: 6px;
+  }
+
+  .title { font-size: 16px; }
+  .subtitle { font-size: 11px; }
+
+  .kicker { font-size: 11px; }
+  .h-left h2 { font-size: 16px; }
+
+  .chart-svg { height: 150px; }
+  .price-big { font-size: 16px; }
+  .chart-footer { font-size: 11px; }
+}
 
 </style>
 </head>
@@ -205,7 +291,7 @@
         <div class="logo">CG</div>
         <div>
           <div class="title">🛡️ ChainGuard — DeFi Protection AI</div>
-          <div class="subtitle">Rug Token Scanner • Airdrop Eligibility Checker • Visual Demo</div>
+          <div class="subtitle">Rug Token Scanner • Airdrop Eligibility Checker</div>
         </div>
       </div>
       <div class="subtitle mono">en</div>
@@ -219,7 +305,7 @@
           <div class="h-left">
             <div class="kicker">RUG TOKEN SCANNER</div>
             <h2 id="rug-head">Scan Contract Address for Rugpull Signals</h2>
-            <div class="muted" style="margin-top:6px">Primary focus — checks liquidity, owner concentration, transfer anomalies, and more (visual-only).</div>
+            <div class="muted" style="margin-top:6px">Primary focus — checks liquidity, owner concentration, transfer anomalies, and more.</div>
           </div>
           <div class="h-right">
             <div class="mono">Network</div>
@@ -240,7 +326,6 @@
           <div class="input" role="textbox" aria-label="Contract address (visual only)">0xABCD...1234</div>
           <div class="cta" role="button" onclick="window.startConnect()">Analyze</div>
         </div>
-        <div class="hint">Option: change chain (visual selector) • Input is design-only</div>
       </section>
 
       <!-- AIRDROP ELIGIBILITY CHECKER (Secondary; centered) -->
@@ -249,7 +334,7 @@
           <div class="h-left">
             <div class="kicker">AIRDROP ELIGIBILITY</div>
             <h2 id="airdrop-head">Check Airdrop Eligibility & Distribution</h2>
-            <div class="muted" style="margin-top:6px">Secondary focus — see airdrop status, recipients, and token distribution (visual-only).</div>
+            <div class="muted" style="margin-top:6px">Secondary focus — see airdrop status, recipients, and token distribution.</div>
           </div>
           <!-- Replace the previous chain select div with this -->
 <div class="select-dropdown">
@@ -269,7 +354,6 @@
           <div class="input" role="textbox" aria-label="Token symbol or wallet (visual only)">token symbol or wallet (e.g. MOCK or 0xA1B2...)</div>
           <div onclick="window.startConnect()" class="cta" role="button" >Check Eligibility</div>
         </div>
-        <div class="hint">This demonstrates the airdrop eligibility UI — purely static.</div>
       </section>
 
       <!-- RESULT PANEL (integrated - your block) -->
@@ -506,7 +590,7 @@
 
       <!-- small bottom note -->
       <div style="margin-top:12px;color:var(--muted);font-size:13px;text-align:center">
-        © 2025 ChainGuard — Visual demo. Images: Unsplash (free to use).
+        © 2025 ChainGuard 
       </div>
 
     </main>
